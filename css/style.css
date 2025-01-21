@@ -1,0 +1,78 @@
+body {
+  background-color: #333;
+}
+
+.wrapper {
+  padding: 50px;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  height: 200px;
+  background-color: #444;
+  border-radius: 50px;
+}
+
+.block {
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50px;
+}
+
+/* ------------------------------------------------------- */
+.block {
+  animation: move-block 3s linear infinite alternate, color-block 3s linear 3s infinite alternate;
+  /* animation: move-block 2s alternate 3s forwards; */
+  /* animation-name: ; */
+  /* Задаем имя анимации */
+  /* animation-duration: ; */
+  /* Задаем время анимации */
+  /* animation-timing-function: ; */
+  /* animation-iteration-count: ; */
+  /* Задаем количесвто повторений анимации */
+  /* animation-direction: ; */
+  /* Задаем каждой четной анимации задачу проигрываться в обратном направлении */
+  /* animation-delay: 3s; */
+  /* Задаем задержку анимации на 3 секунды, можно сделать отрицательной и перескочить во времени анимации */
+  /* animation-fill-mode: ; */
+  /* это свойство отвечает за то, какие свойства остануться у анимации по окончанию проигрывания */
+}
+
+.block:hover {
+  animation-name: paused;
+  /* animation-play-state: paused; */
+  /* Данное свойство позволяет остановить анимацию при наведени курсора на блок */
+
+}
+
+@keyframes move-block {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    border-radius: 100px;
+  }
+
+  100% {
+    left: calc(100% - 200px);
+  }
+}
+
+@keyframes color-block {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    border-radius: 100px;
+    background-color: rgb(252, 61, 93);
+  }
+
+  100% {
+    left: calc(100% - 200px);
+  }
+}
